@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    /* overflow-y: hidden; */
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(25, 25, 30);
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#container {
+    perspective: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box {
+    width: 230px;
+    height: 300px;
+    background-color: #303035;
+    border-radius: 12px;
+    border: 1px solid #5d5d66;
+    padding: 1rem;
+    position: relative;
+    transition: all .6s ease;
+}
+
+#container:hover #box {
+    background-color: #3c3c42;
+    transform: rotateX(60deg);
+    transform-origin: bottom;
+}
+
+#box:hover .ethereum {
+    background-color: #3c3c42;
+}
+
+#box:hover .monkey-img {
+    transform: scale(1.03) translateY(-2%);
+}
+
+#box svg {
+    width: 100%;
+    height: 100%;
+    transition: all .6s ease;
+}
+
+.para {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    transition: all .6s ease;
+}
+
+.p1 {
+    font-size: .6rem;
+    color: gray;
+}
+
+.p2 {
+    font-size: .8rem;
+    color: rgb(255, 255, 255);
+}
+
+.limited-edition-tag {
+    position: absolute;
+    left: -4.5%;
+    top: 15%;
+    z-index: 1;
+    transition: all .6s ease;
+}
+
+.LE {
+    color: white;
+    background-color: #4d0de1;
+    width: fit-content;
+    padding: .4rem .6rem;
+    font-size: 12px;
+    position: relative;
+}
+
+.LE::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #3b08b4;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    position: absolute;
+    bottom: -36%;
+    left: -.2%;
+    z-index: -1;
+    transition: all .6s ease;
+}
+
+.monkey-img {
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    /* object-fit: cover; */
+    bottom: 1rem;
+    left: 12%;
+    transition: all .6s ease;
+}
+
+.ethereum {
+    width: 50%;
+    color: white;
+    position: absolute;
+    padding: .5rem 0rem;
+    background-color: #303035;
+    font-size: 12px;
+    border-top-right-radius: 8px;
+    bottom: 1rem;
+    left: 1px;
+    transition: all .3s ease;
+}
+
+.ethereum i {
+    color: rgb(255, 179, 0);
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+
+button {
+    color: white;
+    background-color: #303035;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 4px 4px 0 #D5F903;
+    transition: all .6s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button::after {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: #D5F903;
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: all .6s ease;
+    border-radius: 10px;
+}
+
+button:hover {
+    box-shadow: none;
+    color: #4d0de1;
+    font-weight: 700;
+    border-inline: 3px solid #4d0de1;
+}
+
+button:hover::after {
+    width: 120%;
+    height: 120%;
+}
+
+#container:hover .para {
+    scale: 1.2;
+}
+
+#container:hover .green-svg {
+    filter: brightness(90%);
+}
+
+#container:hover .monkey-img {
+    bottom: 3.8%;
+}
+
+#container:hover .limited-edition-tag {
+    left: -30%;
+    scale: 1.1;
+    top: 30%;
+}
+
+#container:hover .LE::before {
+    left: 89.8%;
+}
+
+#container:hover .ethereum {
+    border-radius: 8px;
+    bottom: 30%;
+    left: 100%;
+}
+
+.card1 .LE {
+    background-color: #F3147C;
+}
+
+.card1 .LE::before {
+    background-color: #cc0964;
+}
+
+.card1 button {
+    box-shadow: 4px 4px 0 #E5A500;
+}
+
+.card1:hover button {
+    box-shadow: none;
+}
+
+.card1 button:hover {
+    box-shadow: none;
+    color: #ffffff;
+    font-weight: 700;
+    border-inline: 3px solid #F3147C;
+}
+
+.card1 button::after {
+    background-color: #E5A500;
+}
+
+.card3 .LE {
+    background-color: #265459;
+}
+
+.card3 .LE::before {
+    background-color: #183538;
+}
+
+.card3 button {
+    box-shadow: 4px 4px 0 #E23A1F;
+}
+
+.card3:hover button {
+    box-shadow: none;
+}
+
+.card3 button:hover {
+    box-shadow: none;
+    color: #ffffff;
+    font-weight: 700;
+    border-inline: 3px solid #265459;
+}
+
+.card3 button::after {
+    background-color: #E23A1F;
+}
+
+@media (max-width: 760px) {
+
+    #main {
+        height: fit-content;
+        padding: 4rem 0;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+}
+
+.video-cont {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    position: fixed;
+}
